@@ -27,13 +27,15 @@ Modify to add/remove user inputs for calling stfs.
 
 Contains functions that represent all valid state transitions.
 
-Exported functions take some associated parameters and return an array of SQL updates via promises. The functions `createdLobby`, `joinedLobby`, `closedLobby`, `submittedMoves`, and `scheduledData` are callable via user input as mentioned above while functions like `zombieRound`, `updateStats`, and `executeRound` are used elsewhere. <mark>(Presumably in the round executor?)</mark>
+Exported functions take some associated parameters and return an array of SQL updates via promises. The functions `createdLobby`, `joinedLobby`, `closedLobby`, `submittedMoves`, and `scheduledData` are callable via user input as mentioned in [Entry](#entry) while functions like `zombieRound`, `updateStats`, and `executeRound` are used elsewhere. <mark>(Presumably in the round executor?)</mark>
 
 `validateSubmittedMoves` and `finalizeMatch` are internal functions.
 
 Modify to add/remove state transition functions.
 
-## [Persist](./src/stf/v1/persist/index.ts) 
+## [Persist](./src/stf/v1/persist/index.ts)
+
+Contains bulk of the logic used by stfs in [Transition](#transition) to create and order SQL updates for the game's entire state. The functions found here generate the SQL queries.
 
 ## [Types](./src/stf/v1/types.ts)
 
